@@ -9,6 +9,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "django-insecure-change-this-in-production")
 DEBUG = os.environ.get("DEBUG", "True") == "True"
 ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.railway.app",
+    "http://127.0.0.1:8000",
+    "http://localhost:8000",
+]
+
 
 ROOT_URLCONF = 'hotel_management.urls'
 WSGI_APPLICATION = 'hotel_management.wsgi.application'
